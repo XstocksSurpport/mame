@@ -70,13 +70,13 @@ export function Dashboard({
             <section className="card">
               <div className="card-header">
                 <span className="card-label">最近交易</span>
-                <span className="card-hint">最近 20 笔</span>
+                <span className="card-hint">最近 20 笔 · 链上扫描</span>
               </div>
 
               {historyLoading ? (
                 <p className="muted loading-text">交易记录加载中...</p>
-              ) : data.transfers.length === 0 ? (
-                <p className="muted">暂无交易记录</p>
+          ) : data.transfers.length === 0 ? (
+            <p className="muted">近期暂无 MAME 交易记录</p>
               ) : (
                 <ul className="tx-list">
                   {data.transfers.map((tx) => (
