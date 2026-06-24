@@ -1,0 +1,14 @@
+import{o as e}from"./rolldown-runtime-C_JxhDyB.js";import{n as t,t as n}from"./jsx-runtime-DC0n_eUu.js";import{v as r}from"./context-CwQoLGKR-BSFDTGHb.js";import{E as i,_n as a,cn as o,lt as s,nn as c,y as l}from"./useActiveWallet-CvmN8neg-DoXjHuV7.js";import{Ut as u}from"./index-CI5i05P9.js";import{l as d,r as f,s as p}from"./ModalHeader-YbJk-YIQ-CaZMzS4t.js";import{t as m}from"./Subtitle-CV-2yKE4-D4auC_vJ.js";import{t as h}from"./Title-BnzYV3Is-CkgtJIX6.js";import{t as g}from"./ExclamationTriangleIcon-DDZDA9gs.js";import{t as _}from"./LockClosedIcon-B1S5kOAp.js";var v=n(),y=e(t(),1);s();var b=i.div`
+  && {
+    border-width: 4px;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  aspect-ratio: 1;
+  border-style: solid;
+  border-color: ${e=>e.$color??`var(--privy-color-accent)`};
+  border-radius: 50%;
+`,x={component:()=>{let{user:e}=o(),{client:t,walletProxy:n,refreshSessionAndUser:i,closePrivyModal:s}=a(),x=u(),{entropyId:S,entropyIdVerifier:C}=x.data?.recoverWallet??{},[w,T]=(0,y.useState)(!1),[E,D]=(0,y.useState)(null),[O,k]=(0,y.useState)(null);function A(){if(!w){if(O)return x.data?.setWalletPassword?.onFailure(O),void s();if(!E)return x.data?.setWalletPassword?.onFailure(Error(`User exited set recovery flow`)),void s()}}return x.onUserCloseViaDialogOrKeybindRef.current=A,(0,v.jsxs)(v.Fragment,O?{children:[(0,v.jsx)(f,{onClose:A},`header`),(0,v.jsx)(b,{$color:`var(--privy-color-error)`,style:{alignSelf:`center`},children:(0,v.jsx)(g,{height:38,width:38,stroke:`var(--privy-color-error)`})}),(0,v.jsx)(h,{style:{marginTop:`0.5rem`},children:`Something went wrong`}),(0,v.jsx)(l,{style:{minHeight:`2rem`}}),(0,v.jsx)(p,{onClick:()=>k(null),children:`Try again`}),(0,v.jsx)(d,{})]}:{children:[(0,v.jsx)(f,{onClose:A},`header`),(0,v.jsx)(_,{style:{width:`3rem`,height:`3rem`,alignSelf:`center`}}),(0,v.jsx)(h,{style:{marginTop:`0.5rem`},children:`Automatically secure your account`}),(0,v.jsx)(m,{style:{marginTop:`1rem`},children:`When you log into a new device, you’ll only need to authenticate to access your account. Never get logged out if you forget your password.`}),(0,v.jsx)(l,{style:{minHeight:`2rem`}}),(0,v.jsx)(p,{loading:w,disabled:!(!w&&!E),onClick:()=>async function(){T(!0);try{let a=await t.getAccessToken(),o=c(e,S);if(!a||!n||!o)return;if(!(await n.setRecovery({accessToken:a,entropyId:S,entropyIdVerifier:C,existingRecoveryMethod:o.recoveryMethod,recoveryMethod:`privy`})).entropyId)throw Error(`Unable to set recovery on wallet`);let l=await i();if(!l)throw Error(`Unable to set recovery on wallet`);let u=c(l,o.address);if(!u)throw Error(`Unabled to set recovery on wallet`);D(!!l),setTimeout((()=>{x.data?.setWalletPassword?.onSuccess(u),s()}),r)}catch(e){k(e)}finally{T(!1)}}(),children:E?`Success`:`Confirm`}),(0,v.jsx)(d,{})]})}};export{x as SetAutomaticRecoveryScreen,x as default};
